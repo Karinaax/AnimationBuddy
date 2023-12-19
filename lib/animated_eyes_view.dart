@@ -154,16 +154,18 @@ class _AnimatedEyesViewState extends State<AnimatedEyesView> {
               child: CupertinoActivityIndicator(),
             )
           : Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                AspectRatio(
+             mainAxisAlignment: MainAxisAlignment.start,
+             children: [
+              Expanded(
+                child: AspectRatio(
                   aspectRatio: 1.5,
                   child: Rive(
                     artboard: _riveArtBoard!,
                     fit: BoxFit.contain,
                     useArtboardSize: true,
-                  ),
-                ),
+                    ),
+                    ),
+                    ),
                 SingleChildScrollView(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -437,7 +439,7 @@ class CustomSwitchState extends State<CustomSwitch> with SingleTickerProviderSta
                 widget.value == false ? widget.onChanged(true) : widget.onChanged(false);
               },
               child: Container(
-                width: widget.width ?? 48.0,
+                width: widget.width ?? 5,
                 height: widget.height ?? 29.0,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(24.0),
